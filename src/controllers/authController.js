@@ -31,14 +31,27 @@ router.post("/register", async (req, res) => {
 
 router.get("/users", async (req, res) => {
   let q = "SELECT * FROM users";
+
   db.query(q, (err, result) => {
     if (err) throw err;
     else {
       return res.status(200).send(result);
     }
+    //   Preciso implementar o pagination pelo id ou pelo nome, verificar qual o melhor
   });
+});
 
-  //   Preciso implementar o pagination pelo id ou pelo nome, verificar qual o melhor
+router.get("/users/:cpf", async (req, res) => {
+  const { cpf } = req.params;
+
+  let q = "SELECT * FROM users WHERE cpf = ?";
+
+  db.query(q, [cpf], (err, result) => {
+    if (err) throw err;
+    else {
+      return res.status(200).send(result);
+    }
+  });
 });
 
 module.exports = (app) => app.use("/auth", router);
