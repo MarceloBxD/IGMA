@@ -13,11 +13,11 @@ router.post("/register", async (req, res) => {
   if (!name || !cpf || !nasc) return res.status(400).send("Missing data");
 
   //   Verificando se o cpf é válido ou não
-  var response = validateCpf(cpf);
+  //   var response = validateCpf(cpf);
 
   //   Verificando se os campos estão preenchidos corretamente
-  if (cpf.length != 11 || cpf.length != 14)
-    return res.status(400).send("Invalid CPF - Error length");
+  //   if (cpf.length != 11 || cpf.length != 14)
+  //     return res.status(400).send("Invalid CPF - Error length");
   if (nasc.length != 10) return res.status(400).send("Invalid date");
 
   //   Insere os dados no banco de dados
@@ -25,7 +25,7 @@ router.post("/register", async (req, res) => {
   db.query(q, [name, cpf, nasc], (err, result) => {
     if (err) throw err;
     else {
-      //   let response = validateCpf(cpf);
+      let response = validateCpf(cpf);
 
       //   Verificando se o cpf é válido ou não
       if (response == false) return res.status(400).send("Invalid CPF");
