@@ -1,9 +1,12 @@
 const express = require("express");
 
+// Função criada para validar o CPF
 const validateCpf = require("../helpers/helpers");
 
+// Conexão com o banco de dados
 const db = require("../database");
 
+// Para criação de rotas
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
@@ -24,7 +27,9 @@ router.post("/register", async (req, res) => {
       //   Verificando se o cpf é válido ou não
       if (response == false) return res.status(422).send("Invalid CPF");
       else if (response == true)
-        return res.status(200).send("Valid CPF - User registered");
+        return res
+          .status(200)
+          .send("Valid CPF - User registered with Success!");
     }
   });
 });
