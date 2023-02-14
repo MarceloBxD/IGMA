@@ -36,15 +36,6 @@ router.post("/register", async (req, res) => {
     let response = validateCpf(cpf);
 
     if (response) {
-      // let sendCpf =
-      //   cpf.substring(0, 3) +
-      //   "." +
-      //   cpf.substring(3, 6) +
-      //   "." +
-      //   cpf.substring(6, 9) +
-      //   "-" +
-      //   cpf.substring(9, 11);
-
       return res
         .status(200)
         .send("User registered with Success! - CPF: " + cpf);
@@ -56,12 +47,6 @@ router.post("/register", async (req, res) => {
       let response = validateCpf(cpf);
 
       if (response == false) return res.status(422).send("Invalid CPF");
-      // else if (response == true){
-      //   let sendCpf = cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9, 11);
-      //     return res
-      //       .status(200)
-      //       .send("Valid CPF - User registered with Success!");
-      // }
       else {
         res.send(result);
       }
@@ -77,7 +62,6 @@ router.get("/users", async (req, res) => {
     else {
       return res.status(200).send(result);
     }
-    //   Preciso implementar o pagination pelo id ou pelo nome, verificar qual o melhor
   });
 });
 
