@@ -28,7 +28,8 @@ router.post("/register", async (req, res) => {
   //   Verificando se os campos estão preenchidos
   if (!name || !cpf || !nasc) return res.status(400).send("Missing data");
 
-  if (nasc.length != 10) return res.status(400).send("Invalid date");
+  if (nasc.length != 10)
+    return res.status(400).send("Invalid date - Use: yyyy--mm-dd");
 
   //   Insere os dados no banco de dados
   let q = "INSERT INTO users (name, cpf, nasc) VALUES (?, ?, ?)";

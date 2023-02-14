@@ -42,4 +42,5 @@
 
 ## Was asked to do some documentation too, and here it is
 
-<img alt="img1" src="Igma-content.png"/>
+### The structure of the project was made as follows
+
