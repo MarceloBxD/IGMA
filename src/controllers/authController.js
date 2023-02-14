@@ -1,7 +1,7 @@
 const express = require("express");
 
 // Função criada para validar o CPF
-const validateCpf = require("../helpers/helpers");
+const validateCpf = require("../middlewares");
 
 // Conexão com o banco de dados
 const db = require("../database");
@@ -12,6 +12,19 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
   const { name, cpf, nasc } = req.body;
 
+  if (cpf.length == 11) {
+    cpf_new =
+      cpf.substring(0, 3) +
+      "." +
+      cpf.substring(3, 6) +
+      "." +
+      cpf.substring(6, 9) +
+      "-" +
+      cpf.substring(9, 11);
+  } else {
+    cpf_new = cpf;
+  }
+
   //   Verificando se os campos estão preenchidos
   if (!name || !cpf || !nasc) return res.status(400).send("Missing data");
 
@@ -19,17 +32,39 @@ router.post("/register", async (req, res) => {
 
   //   Insere os dados no banco de dados
   let q = "INSERT INTO users (name, cpf, nasc) VALUES (?, ?, ?)";
-  db.query(q, [name, cpf, nasc], (err, result) => {
+  db.query(q, [name, cpf_new, nasc], (err, result) => {
+    let response = validateCpf(cpf);
+
+    if (response) {
+      // let sendCpf =
+      //   cpf.substring(0, 3) +
+      //   "." +
+      //   cpf.substring(3, 6) +
+      //   "." +
+      //   cpf.substring(6, 9) +
+      //   "-" +
+      //   cpf.substring(9, 11);
+
+      return res
+        .status(200)
+        .send("User registered with Success! - CPF: " + cpf);
+    }
+
     if (err) throw err;
     else {
+      //   Verificando se o cpf é válido ou não
       let response = validateCpf(cpf);
 
-      //   Verificando se o cpf é válido ou não
       if (response == false) return res.status(422).send("Invalid CPF");
-      else if (response == true)
-        return res
-          .status(200)
-          .send("Valid CPF - User registered with Success!");
+      // else if (response == true){
+      //   let sendCpf = cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9, 11);
+      //     return res
+      //       .status(200)
+      //       .send("Valid CPF - User registered with Success!");
+      // }
+      else {
+        res.send(result);
+      }
     }
   });
 });
