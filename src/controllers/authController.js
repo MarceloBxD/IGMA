@@ -28,7 +28,7 @@ router.post("/register", async (req, res) => {
   //   Verificando se os campos estão preenchidos
   if (!name || !cpf || !nasc) return res.status(400).send("Missing data");
 
-  if (nasc.length != 10)
+  if (nasc.length != 10 || nasc[4] != "-" || nasc[7] != "-")
     return res.status(400).send("Invalid date - Use: yyyy--mm-dd");
 
   //  Verificando se o cpf é válido ou não
