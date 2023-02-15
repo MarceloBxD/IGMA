@@ -14,7 +14,7 @@
 * List all the users in database ( using pagination )
 
 ### It was asked to do the CPF validation manually
-### Other important observation ⚠️
+### Another observation ⚠️
 
 * The CPF can be passed with or without dots and hyphens
 
@@ -24,7 +24,7 @@
 
 ## Which tecnologies were used in this application ? ☺️
 
-* Nodemon ( Don't need to restart the server all the times that I change something in project )
+* Nodemon ( Don't need to restart the server when change in the project is made )
 * Mysql ( Database )
 * Express ( To create the routes )
 * Body-Parser ( Use to convert the body of the request to various formats, including json )
@@ -36,7 +36,7 @@
 2. open w/ terminal
 3. code . ( if you use Visual Studio Code as IDE) to open the project inside VScode.
 
-## Was asked to do some documentation too, and here it is
+## Required to do some documentation too, so here it is
 
 #### Project structure
 
@@ -46,11 +46,11 @@
 
 ![RegisterRoute](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/MainRequests%20-%20Register.png?token=GHSAT0AAAAAAB5KLEV6PCCXUEUPIM6EX4M6Y7MFI6Q)
 
-> I used a condition to see if the cpf was sent with or without the dots and hyphens, and if it was without, use the substring to put them correctly
+> I used a condition that, if the cpf was sent without the dots and hyphens, use the substring to put them correctly
 
 ![FinalRegister](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/finalRegister.png?token=GHSAT0AAAAAAB5KLEV6DKMZ5JT7G6UUHAU2Y7MFYDA)
 
-> After that, the route to register a user was created. If all values were not passed as expected, it returns a "Missing data" error
+> After that, the route to register a user was created. If all values don’t pass as expected, it returns a "Missing data" error
 
 > It was created the routes to get all users and get users based on his/her CPF
 
