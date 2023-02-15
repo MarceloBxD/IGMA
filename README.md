@@ -58,7 +58,7 @@
 
 > If the passed cpf was already in the database, it would not send and give's a error message
 
-![FinalRegister]([https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/finalRegister.png?token=GHSAT0AAAAAAB5KLEV6DKMZ5JT7G6UUHAU2Y7MFYDA](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/register(2).png))
+![FinalRegister](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/register(2).png)
 
 > After that, the route to register a user was created. If all values don’t pass as expected, it returns a "Missing data" error
 
