@@ -52,11 +52,13 @@
 
 > First of all, the necessary imports were made, including the function created to validate the CPF called validateCpf
 
-![RegisterRoute](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/MainRequests%20-%20Register.png?token=GHSAT0AAAAAAB5KLEV6PCCXUEUPIM6EX4M6Y7MFI6Q)
+![RegisterRoute](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/register(1).png)
 
 > I used a condition that, if the cpf was sent without the dots and hyphens, use the substring to put them correctly
 
-![FinalRegister](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/finalRegister.png?token=GHSAT0AAAAAAB5KLEV6DKMZ5JT7G6UUHAU2Y7MFYDA)
+> If the passed cpf was already in the database, it would not send and give's a error message
+
+![FinalRegister]([https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/finalRegister.png?token=GHSAT0AAAAAAB5KLEV6DKMZ5JT7G6UUHAU2Y7MFYDA](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/register(2).png))
 
 > After that, the route to register a user was created. If all values don’t pass as expected, it returns a "Missing data" error
 
