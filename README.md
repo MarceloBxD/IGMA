@@ -32,9 +32,17 @@
 
 ## How to upload the application ?
 
-1. git clone on some file in your system
-2. open w/ terminal
-3. code . ( if you use Visual Studio Code as IDE) to open the project inside VScode.
+1. Create a file on Desktop
+2. Open with terminal / CMD 
+3. Insert into CMD the following code: git clone https://github.com/MarceloBxD/IGMA.git
+4. Enter on file IGMA: cd IGMA
+5. code . ( if you use Visual Studio Code as IDE) to open the project inside VScode.
+6. If you're Windows user
+7. Press "Ctrl + j" to open the terminal and typewrite "npm install or npm i" to install the necessary dependencies with NPM package
+8. After that, write "npm run dev" without the "..." to run the server with nodemon 
+9. Will appears a message saying "Server is running on port 3000"
+10. Install Insomnia to do the tests
+💎
 
 ## Required to do some documentation too, so here it is
 
