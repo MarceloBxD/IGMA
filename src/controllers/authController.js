@@ -43,9 +43,6 @@ router.post("/register", async (req, res) => {
         if (result.length > 0) {
           return res.status(400).send("CPF already registered");
         } else {
-          // conferindo se o cpf é valido, true -> válido, false -> inválido
-          // response = validateCpf(cpf_new);
-
           let q = "INSERT INTO users (name, cpf, nasc) VALUES (?, ?, ?)";
           db.query(q, [name, cpf_new, nasc], (err, result) => {
             if (err) throw err;
@@ -56,31 +53,9 @@ router.post("/register", async (req, res) => {
         }
       }
     });
+  } else {
+    return res.status(422).send("Invalid CPF - Does not exist");
   }
-
-  // Inserindo os dados no banco de dados
-  // let q = "INSERT INTO users (name, cpf, nasc) VALUES (?, ?, ?)";
-
-  // db.query(q, [name, cpf_new, nasc], (err, result) => {
-  //   let response = validateCpf(cpf);
-
-  //   if (response) {
-  //     return res
-  //       .status(200)
-  //       .send("User registered with Success! - CPF: " + cpf);
-  //   }
-
-  //   if (err) throw err;
-  //   else {
-  //     //   Verificando se o cpf é válido ou não
-  //     let response = validateCpf(cpf);
-
-  //     if (response == false) return res.status(422).send("Invalid CPF");
-  //     else {
-  //       res.send(result);
-  //     }
-  //   }
-  // });
 });
 
 router.get("/users", async (req, res) => {
