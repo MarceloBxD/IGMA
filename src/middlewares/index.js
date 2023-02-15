@@ -12,11 +12,10 @@ const validateCpf = (cpf) => {
     }
 
     // Cálculo do primeiro dígito
-
     let sum = 0;
     for (let i = 1; i <= 9; i++)
       sum = sum + parseInt(cpf.substring(i - 1, i)) * (11 - i);
-    console.log("Soma: ", sum);
+    // console.log("Soma: ", sum);
 
     let rest = sum % 11;
     // console.log(rest);
@@ -26,7 +25,7 @@ const validateCpf = (cpf) => {
     } else {
       firstDigit = 11 - rest;
     }
-    console.log("Primeiro Dígito: ", firstDigit);
+    // console.log("Primeiro Dígito: ", firstDigit);
 
     // Cálculo do segundo dígito
     sum = 0;
@@ -44,7 +43,7 @@ const validateCpf = (cpf) => {
   }
 
   let cpf_verified = cpf.substring(0, 9) + firstDigit + secondDigit;
-  console.log("CPF verificado: ", cpf_verified);
+  // console.log("CPF verificado: ", cpf_verified);
 
   cpf_array.push(cpf);
   cpf_array.push(cpf_verified);
