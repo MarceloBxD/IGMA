@@ -6,6 +6,7 @@
 * Birth
 
 ### Important note ⚠️
+
 #### Validate the CPF before recording the customer in the database
 
 > Endpoints
@@ -35,16 +36,15 @@
 1. Create a file on Desktop
 2. Open with terminal / CMD 
 3. Insert into CMD the following code: git clone https://github.com/MarceloBxD/IGMA.git
-4. Enter on file IGMA: cd IGMA
-5. code . ( if you use Visual Studio Code as IDE) to open the project inside VScode.
-6. If you're Windows user
-7. Press "Ctrl + j" to open the terminal and typewrite "npm install or npm i" to install the necessary dependencies with NPM package
+5. Open on VScode or another IDE
+6. If you're Windows user press "Ctrl + j" to open the terminal and typewrite "npm install or npm i" to install the necessary dependencies with NPM package
 8. After that, write "npm run dev" without the "..." to run the server with nodemon 
 9. Will appears a message saying "Server is running on port 3000"
-10. Install Insomnia to do the tests
+10. Install Insomnia or another framework to test the API
+11. it is important to create a database with the same values ​​to do the tests correctly. The fields are userId, name, cpf, nasc.
 💎
 
-## Required to do some documentation too, so here it is
+## Documentation
 
 #### Project structure
 
@@ -52,11 +52,13 @@
 
 > First of all, the necessary imports were made, including the function created to validate the CPF called validateCpf
 
-![RegisterRoute](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/MainRequests%20-%20Register.png?token=GHSAT0AAAAAAB5KLEV6PCCXUEUPIM6EX4M6Y7MFI6Q)
+![RegisterRoute](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/register(1).png)
 
 > I used a condition that, if the cpf was sent without the dots and hyphens, use the substring to put them correctly
 
-![FinalRegister](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/finalRegister.png?token=GHSAT0AAAAAAB5KLEV6DKMZ5JT7G6UUHAU2Y7MFYDA)
+> If the passed cpf was already in the database, it would not send and give's a error message
+
+![FinalRegister](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/register(2).png)
 
 > After that, the route to register a user was created. If all values don’t pass as expected, it returns a "Missing data" error
 
