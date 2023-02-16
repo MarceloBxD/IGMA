@@ -41,6 +41,7 @@
 8. After that, write "npm run dev" without the "..." to run the server with nodemon 
 9. Will appears a message saying "Server is running on port 3000"
 10. Install Insomnia or another framework to test the API
+11. it is important to create a database with the same values ​​to do the tests correctly. The fields are userId, name, cpf, nasc.
 💎
 
 ## Documentation
