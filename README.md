@@ -28,6 +28,7 @@
 * Nodemon ( Don't need to restart the server when change in the project is made )
 * Mysql ( Database )
 * Express ( To create the routes )
+* Dotenv ( To hide my database password )
 * Body-Parser ( Use to convert the body of the request to various formats, including json )
 * Cors ( to allow a web application to run in one origin and access resources from a different origin )
 
