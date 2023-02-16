@@ -66,4 +66,15 @@
 
 ![GetRoute](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/finalGets.png?token=GHSAT0AAAAAAB5KLEV7SN5MI4LQQ7A7ZGA4Y7MFPYA)
 
+> Here are some pictures of the projects
+
+![Structure](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/CreateUser(1).png)
+
+![Structure](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/CreateUser(2).png)
+
+![Structure](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/CreateUser(3).png)
+
+![Structure](https://raw.githubusercontent.com/MarceloBxD/IGMA/master/src/images/userByCpf.png)
+
+
 Feito por ★ Marcelo Bracet ★
