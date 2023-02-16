@@ -58,13 +58,35 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/users", async (req, res) => {
+router.get("/users/", async (req, res) => {
   let q = "SELECT * FROM users";
 
   db.query(q, (err, result) => {
     if (err) throw err;
     else {
-      return res.status(200).send(result);
+      // paginacao
+      const page = parseInt(req.query.page);
+      const limit = parseInt(req.query.limit);
+      const startIndex = (page - 1) * limit;
+      const endIndex = page * limit;
+      const results = {};
+
+      if (endIndex < result.length) {
+        results.next = {
+          page: page + 1,
+          limit: limit,
+        };
+      }
+
+      if (startIndex > 0) {
+        results.previous = {
+          page: page - 1,
+          limit: limit,
+        };
+      }
+
+      results.results = result.slice(startIndex, endIndex);
+      return res.status(200).send(results);
     }
   });
 });
